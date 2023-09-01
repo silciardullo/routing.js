@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import {Link} from "react-router-dom";
 
 function Home(){
+    const[productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() =>{
+        fetch('https://fakestoreapi.com/products')
+        .then(response => response.jason())
+        .then(data=>{
+            setProductos(data);
+            setLoading(false);
+        })
+    }, [])
+
     return(
         <div>
 

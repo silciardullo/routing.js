@@ -9,14 +9,15 @@ import Login from './componentes/Login';
 function App() {
   return (
     <>
-    <Router>
+    <h1>React App</h1>
+    <BrowserRouter basename="/routing_js">
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/producto/:id' element={<MostrarProducto/>} />
-        <Route path='/registro' element={<Registro/>} />
-        <Route path='/login' element={<Login/>} />
+        <Route path='/producto/:id' element={<MostrarProducto />} />
+        <Route path='/registro' element={<Registro />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
     </>
     
   );
